@@ -231,7 +231,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4367465428461706, guid: bb1490b5f169dc6439aabfdb75770b43, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 61168821945905396, guid: bb1490b5f169dc6439aabfdb75770b43,
         type: 2}
@@ -356,7 +356,7 @@ Transform:
   - {fileID: 1092585691}
   - {fileID: 297927220}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &790784600
 GameObject:
@@ -418,7 +418,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &857791548
 GameObject:
@@ -430,8 +430,8 @@ GameObject:
   - component: {fileID: 857791551}
   - component: {fileID: 857791550}
   - component: {fileID: 857791549}
-  - component: {fileID: 857791553}
   - component: {fileID: 857791552}
+  - component: {fileID: 857791553}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -453,7 +453,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 58dbe3d657a82fe49879687af766e6b8, type: 2}
+  - {fileID: 2100000, guid: 79c608a2be4a6a141aeec38a38740963, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -486,12 +486,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 857791548}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.002, y: 0.01, z: 0}
-  m_LocalScale: {x: 23.12399, y: 9.975208, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 23.146189, y: 9.9738455, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &857791552
 Rigidbody2D:
@@ -521,9 +521,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 857791548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea7ddf2ccf21b5040934e88e7df9db3d, type: 3}
+  m_Script: {fileID: 11500000, guid: af23b275558788f43bd759900bebcf43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CanScroll>k__BackingField: 0
+  _startingSpeed: 0.1
+  _renderer: {fileID: 0}
+  _speed: 0
 --- !u!1 &1092585689
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +658,7 @@ RectTransform:
   - {fileID: 1786070122}
   - {fileID: 1440641188}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
