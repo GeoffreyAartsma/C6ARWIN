@@ -22,19 +22,21 @@ public class FishSpawner : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("PickUp") == null) 
+        // Access script of the player (through his tag) and get the script component to access the variable Alive
+        bool isAlive = GameObject.FindGameObjectWithTag("Player").GetComponent<CubeSchildpadController>().Alive;
+
+        if (GameObject.FindGameObjectWithTag("PickUp") == null && isAlive) 
         {
-            for (int i = 0; i < wave; i++)
+            for (int i = 0; i < Mathf.Clamp(wave, 0, 5); i++)
             {
                 clone = Instantiate(prefab, new Vector2(transform.position.x, Random.Range(-5.0f, 5.0f)), transform.rotation) as Rigidbody2D;
                 clone.velocity = new Vector2(-10f, 0f);
             }
-            wave++;
-        }
-        else
-        {
-            Debug.Log(GameObject.FindGameObjectsWithTag("PickUp"));
-        }                
 
+            wave++;
+        } else if (!isAlive)
+        {
+            wave = 1;
+        }
     }
 }

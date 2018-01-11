@@ -57,6 +57,9 @@ public class CubeSchildpadController : MonoBehaviour {
             gameOverText.enabled = false;
             rb.position = new Vector2(rb.position.x, 0);
 
+            foreach (GameObject fish in GameObject.FindGameObjectsWithTag("PickUp")) {
+                Destroy(fish);
+            }
 
             Alive = true;
         }
