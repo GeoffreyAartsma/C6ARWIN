@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CubeSchildpadController : MonoBehaviour {
+
     Rigidbody2D rb;
 
     [SerializeField]
@@ -29,9 +30,19 @@ public class CubeSchildpadController : MonoBehaviour {
 		count = 0;
 		SetCountText ();
 	}
-	
-	// FixedUpdate is called once per frame
-	void FixedUpdate () {
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+    }
+
+
+    // FixedUpdate is called once per time step
+    void FixedUpdate () {
         if (Alive)
         {
             float moveVertical = Input.GetAxis("Vertical") * multiplyer;
@@ -52,10 +63,14 @@ public class CubeSchildpadController : MonoBehaviour {
                 rb.velocity = new Vector2(rb.velocity.x, 0f);
             }
         }
+        
+        // Handles start
         else if (Input.GetKey(KeyCode.B))
         {
             gameOverText.enabled = false;
             rb.position = new Vector2(rb.position.x, 0);
+            count = 0;
+            SetCountText();
 
             foreach (GameObject fish in GameObject.FindGameObjectsWithTag("PickUp")) {
                 Destroy(fish);
@@ -65,6 +80,7 @@ public class CubeSchildpadController : MonoBehaviour {
         }
 	}
 
+    // Handles collisions
 	void OnTriggerEnter2D(Collider2D other) { 	
 		if (other.gameObject.CompareTag("PickUp"))
 		{
@@ -81,6 +97,7 @@ public class CubeSchildpadController : MonoBehaviour {
         }
 	}
 
+    // Update UI
 	void SetCountText()
 	{
 		countText.text = "Score: " + count.ToString ();
