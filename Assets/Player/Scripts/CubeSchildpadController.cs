@@ -95,7 +95,14 @@ public class CubeSchildpadController : MonoBehaviour {
             Alive = false;
             gameOverText.enabled = true;
         }
-	}
+
+        if (other.gameObject.CompareTag("Net"))
+        {
+            rb.velocity = Vector2.zero;
+            Alive = false;
+            gameOverText.enabled = true;
+        }
+    }
 
     // Update UI
 	void SetCountText()
