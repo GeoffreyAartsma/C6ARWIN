@@ -29,6 +29,7 @@ public class CubeSchildpadController : MonoBehaviour {
         multiplyer = 8f;
 		count = 0;
 		SetCountText ();
+		setGameOverText (false);
 	}
 
     void Update()
@@ -37,7 +38,6 @@ public class CubeSchildpadController : MonoBehaviour {
         {
             Application.Quit();
         }
-
     }
 
 
@@ -67,7 +67,7 @@ public class CubeSchildpadController : MonoBehaviour {
         // Handles start
         else if (Input.GetKey(KeyCode.B))
         {
-            gameOverText.enabled = false;
+			gameOverText.enabled = false;
             rb.position = new Vector2(rb.position.x, 0);
             count = 0;
             SetCountText();
@@ -98,6 +98,7 @@ public class CubeSchildpadController : MonoBehaviour {
         {
             rb.velocity = Vector2.zero;
             Alive = false;
+			setGameOverText (true);
             gameOverText.enabled = true;
         }
 
@@ -105,6 +106,7 @@ public class CubeSchildpadController : MonoBehaviour {
         {
             rb.velocity = Vector2.zero;
             Alive = false;
+			setGameOverText (true);
             gameOverText.enabled = true;
         }
     }
@@ -113,5 +115,13 @@ public class CubeSchildpadController : MonoBehaviour {
 	void SetCountText()
 	{
 		countText.text = "Score: " + count.ToString ();
+	}
+
+	void setGameOverText(bool game_over) {
+		if (game_over) {
+			gameOverText.text = "Game Over";
+		} else {
+			gameOverText.text = "Start";
+		}
 	}
 }
