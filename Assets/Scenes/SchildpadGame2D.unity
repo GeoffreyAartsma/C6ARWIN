@@ -314,6 +314,11 @@ Prefab:
       value: 
       objectReference: {fileID: 50934577257082970, guid: 90cc284253ac44dfbb60218b802bfe3c,
         type: 2}
+    - target: {fileID: 114920819440936058, guid: 773fb3538b7b5b24992a3a3b2aa4bdf5,
+        type: 2}
+      propertyPath: chanceOfSpawning
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 773fb3538b7b5b24992a3a3b2aa4bdf5, type: 2}
   m_IsPrefabParent: 0

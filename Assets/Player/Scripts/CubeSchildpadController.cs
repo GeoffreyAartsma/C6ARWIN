@@ -65,7 +65,7 @@ public class CubeSchildpadController : MonoBehaviour {
         }
         
         // Handles start
-        else if (Input.GetKey(KeyCode.B))
+        else if (Input.GetKey(KeyCode.Return))
         {
 			gameOverText.enabled = false;
             rb.position = new Vector2(rb.position.x, 0);
@@ -89,7 +89,7 @@ public class CubeSchildpadController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) { 	
 		if (other.gameObject.CompareTag("PickUp"))
 		{
-			other.gameObject.SetActive(false);
+            Destroy (other.gameObject);
 			count = count + 1;
 			SetCountText ();
 		}
