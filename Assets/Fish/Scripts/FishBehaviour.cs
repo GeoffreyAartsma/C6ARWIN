@@ -5,9 +5,12 @@ using UnityEngine;
 public class FishBehaviour : MonoBehaviour {
 
     Rigidbody2D rb;
+    CubeSchildpadController player;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<CubeSchildpadController>();
         rb = GetComponent<Rigidbody2D>();
 	}
 
@@ -20,8 +23,7 @@ public class FishBehaviour : MonoBehaviour {
         }
 
         // Access script of the player (through his tag) and get the script component to access the variable Alive
-        bool isAlive = GameObject.FindGameObjectWithTag("Player").GetComponent<CubeSchildpadController>().Alive;
-        if (!isAlive)
+        if (!player.Alive)
         {
             rb.velocity = Vector2.zero;
         }

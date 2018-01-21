@@ -22,6 +22,7 @@ public class CubeSchildpadController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Application.targetFrameRate = -1;
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezePositionX |
                          RigidbodyConstraints2D.FreezeRotation;
